@@ -12,8 +12,8 @@
 <body>
 
   <h2>Gomathi Nagiri speed check</h2>
-  <div id="target" >Your time :</div>
-  <div id="counter" >Count</div>
+  <div id="target">Your time :</div>
+  <div id="counter">Count</div>
   <button id="start" onclick="startTime()">Start Timer</button>
   <button id="react" onclick="recordTime()">React</button>
 
@@ -27,7 +27,7 @@
   }
   function startTime()
   {
-    for(var i=0;i<9;i++)
+    for(let i=0;i<9;i++)
     {
         setTimeout(()=>{document.getElementById("counter").innerHTML=i;},(8-i)*1000)
     }
@@ -44,10 +44,7 @@
             document.getElementById("target").innerHTML="Time was "+elapsedTime
         }
     },8000)
-
-
   }
-
   
   </script>
 
