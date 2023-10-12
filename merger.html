@@ -82,5 +82,22 @@
 		container.insertBefore(element,container.firstChild) 
 
         }
+		function swap() {
+		let me = document.getElementsByClassName("merger");
+		let container = document.getElementById("target");
+		let a = Math.floor(Math.random() * me.length);
+		let a2 = Math.floor(Math.random() * me.length);
+		let Text1 = document.getElementsByClassName("merger")[a];
+		let Text2 = document.getElementsByClassName("merger")[a2];
+		if (me.length > 1) {
+			let b = Text1.innerHTML;
+			Text1.innerHTML = Text2.innerHTML;
+			Text2.innerHTML = b;
+		}
+	}
+</script>
+</script>
+</html>
+[7:25 pm, 11/10/2023] Hema Nwmsu Acs: merge.html
 </script>
 </html>	
