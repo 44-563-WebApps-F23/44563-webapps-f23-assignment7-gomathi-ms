@@ -13,8 +13,8 @@
 
   <h2>Gomathi Nagiri speed check</h2>
   <div id="target" >Your time :</div>
-  <div id="target" >Count</div>
-  <button>Start Timer</button>
+  <div id="counter" >Count</div>
+  <button id="start" onclick="startTime()">Start Timer</button>
   <button id="react" onclick="recordTime()">React</button>
 
   
@@ -22,9 +22,30 @@
   <script> 
   var reactTime= undefined;
   function recordTime()  {
-    reactTime=Date.now()
-    console.log("current time : ",reactTime)
+    reactTime=Date.now();
+    console.log("current time : ",reactTime);    
+  }
+  function startTime()
+  {
+    for(var i=0;i<9;i++)
+    {
+        setTimeout(()=>{document.getElementById("counter").innerHTML=i;},(8-i)*1000)
+    }
     
+    setTimeout(()=>{
+        if(reactTime==undefined)
+        {
+            document.getElementById("target").innerHTML="Too Slow"
+        }
+        else
+        {
+            endTime=Date.now()
+            elapsedTime=endTime-reactTime
+            document.getElementById("target").innerHTML="Time was "+elapsedTime
+        }
+    },8000)
+
+
   }
 
   
