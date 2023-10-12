@@ -25,29 +25,62 @@
 <body>
     <h2> Gomathi Nagiri builds a
         merger.</h2>
+	<input type="text" name="input" id="inputelement">
 		<div class="flex-container" id="target">
-		  <div>row item 1</div>   
-		  <div>row item 2</div>  
-		  <div>row item 3</div>  
+		  <div class="merger">row item 1</div>   
+		  <div class="merger">row item 2</div>  
+		  <div class="merger">row item 3</div>  
 		</div>
 	
 	<p> Press the button to create an new element of type div and then add it to the container.
 		</p>
-		<button onclick="makeNewDiv()">Add one</button>
+		<button onclick="addend()">Add end</button>
+        <button onclick="addFront()">Add front</button>
+        <button onclick="remove()">Remove</button>
 	
 	
 </body>
 <script>
-	function makeNewDiv(){
+	function addend(){
 		/* make the div and its text */
 		let element = document.createElement("div")
-		element.innerHTML = "an item after 3"
+		let v=document.getElementById("inputelement").value
+		element.innerHTML = v
 		element.style.color = "orange"
+		element.className="merger"
 
 		/* add it to the container */
 		let container = document.getElementById('target')
 		container.appendChild(element)
-		
-	}
+        
+        }
+        function remove()
+        {
+            var mer=document.getElementsByClassName("merger")
+            if(mer.length>0)
+            {
+                let l=mer.length
+                let i=Math.floor(l/2)
+                if(i>=0&&i<l)
+                {
+                    mer[i].remove();
+                }
+            }
+
+        }
+        function addFront()
+        {
+           /* make the div and its text */
+		let element = document.createElement("div")
+		let v=document.getElementById("inputelement").value
+		element.innerHTML = v
+		element.style.color = "orange"
+		element.className="merger"
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.insertBefore(element,container.firstChild) 
+
+        }
 </script>
 </html>	
