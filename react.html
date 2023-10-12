@@ -22,15 +22,7 @@
   
   <script> 
   let reactTime= undefined;
-  function randombonus()
-  {
-    let a=Math.floor(Math.random()*8)+2
-    setTimeout(function (a){
-        return function () {
-                document.getElementById("counter").innerHTML = a;
-            };
-        }(i), (8 - i) * 1000);
-  }
+  
   function recordTime()  {
     reactTime=Date.now();
     console.log("current time : ",reactTime);    
@@ -55,7 +47,15 @@
         }
     },8000)
   }
-  
+  function randombonus()
+  {
+    let a=Math.floor(Math.random()*8)+2
+    setTimeout(function (a){
+        return function () {
+                document.getElementById("counter").innerHTML = a;
+            };
+        }(a), (8 - a) * 1000);
+  }
   </script>
 
 </body>
