@@ -31,6 +31,7 @@
   <p id="penalty" style="color: darkolivegreen;">Penalty is zero</p>
   <p onclick="help()">Click for help</p>
   <p style="background-color: black;" id="help">Help report</p>
+  <button id ="game" onclick="newgame()"> newgame</button>
   <div class="container">
     <div class="row">
       <div class="col-sm-2" style="background-color:lavender;" >
@@ -182,6 +183,30 @@
    
 
   }
+function  newgame()
+{
+  let treasureLocation=Math.floor(Math.random()*24)
+  let trapLocation=Math.floor(Math.random()*24)
+  document.getElementById("locations").innerHTML="Number of locations checked is zero."
+  document.getElementById("penalty").innerHTML="Penalty is 0"
+  
+  for(let i=1;i<=25;i++)
+  {
+    if(i==treasureLocation)
+    {
+      document.getElementById('image'+i).src="treasure.jpg"
+    }
+     else if(i==trapLocation)
+    {
+      document.getElementById('image'+i).src="trap.jpg"
+    }
+    else
+    {
+      document.getElementById('image'+i).src="pirate.png"
+    }
+
+  }
+}
 
 </script>
  </body>
